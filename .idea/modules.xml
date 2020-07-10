@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../jkhotel/.idea/jkhotel.iml" filepath="$PROJECT_DIR$/../jkhotel/.idea/jkhotel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jkhotel-backend.iml" filepath="$PROJECT_DIR$/.idea/jkhotel-backend.iml" />
+    </modules>
+  </component>
+</project>
