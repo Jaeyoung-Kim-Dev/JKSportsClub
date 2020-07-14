@@ -1,6 +1,10 @@
-import express from 'express';
+/*import express from 'express';
 import bodyParser from 'body-parser';
-import {MongoClient} from 'mongodb';
+import {MongoClient} from 'mongodb';*/
+var express =  require('express');
+var bodyParser =  require('body-parser');
+var {MongoClient} = require('mongodb');
+
 
 const app = express();
 
@@ -51,6 +55,22 @@ app.post('/api/hotels/:initials/upvote', async (req, res) => {
     hotelInfo[hotelInitials].upvotes += 1;
     res.status(200).send(`${hotelInfo} now has ${hotelInfo[hotelInitials].upvotes} upvotes!`);
 });*/
+
+app.post('/api/hotels/:initials/downvote', async (req, res) => {
+    withDB(async (db) => {
+        const hotelInitials = req.params.initials;
+
+        const hotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
+        await db.collection('hotels').updateOne({initials: hotelInitials}, {
+            '$set': {
+                upvotes: hotelInfo.upvotes - 1,
+            },
+        });
+
+        const updatedHotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
+        res.status(200).json(updatedHotelInfo);
+    }, res);
+})
 
 app.post('/api/hotels/:initials/add-review', (req, res) => {
     const {username, text} = req.body;
@@ -197,8 +217,5 @@ app.post('/api/resetdb', async (req, res) => { //todo: 포스트맨에서는 잘
         res.sendStatus(200)
     }, res);
 })
-
-
-
 
 app.listen(8000, () => console.log('Listening on  port 8000'));
