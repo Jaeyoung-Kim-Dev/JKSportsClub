@@ -5,7 +5,6 @@ var express =  require('express');
 var bodyParser =  require('body-parser');
 var {MongoClient} = require('mongodb');
 
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -13,7 +12,7 @@ app.use(bodyParser.json());
 const withDB = async (operations, res) => {
     try {
         const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true});
-        const db = client.db('jkhotel')
+        const db = client.db('jksportsclub')
 
         await operations(db);
 
@@ -23,114 +22,118 @@ const withDB = async (operations, res) => {
     }
 }
 
-app.get('/api/hotels/:initials', async (req, res) => {
+app.get('/api/clubs/:initials', async (req, res) => {
     withDB(async (db) => {
-        const hotelInitials = req.params.initials;
+        const clubInitials = req.params.initials;
 
-        const hotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        res.status(200).json(hotelInfo);
+        const clubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        res.status(200).json(clubInfo);
     }, res);
 })
 
-app.post('/api/hotels/:initials/upvote', async (req, res) => {
+app.post('/api/clubs/:initials/upvote', async (req, res) => {
     withDB(async (db) => {
-        const hotelInitials = req.params.initials;
+        const clubInitials = req.params.initials;
 
-        const hotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        await db.collection('hotels').updateOne({initials: hotelInitials}, {
+        const clubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        await db.collection('clubs').updateOne({initials: clubInitials}, {
             '$set': {
-                upvotes: hotelInfo.upvotes + 1,
+                upvotes: clubInfo.upvotes + 1,
             },
         });
 
-        const updatedHotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        res.status(200).json(updatedHotelInfo);
+        const updatedclubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        res.status(200).json(updatedclubInfo);
     }, res);
 })
 
-/*app.post('/api/hotels/:initials/upvote', (req, res) => {
+/*app.post('/api/clubs/:initials/upvote', (req, res) => {
 
-    const hotelInitials = req.params.initials;
+    const clubInitials = req.params.initials;
 
-    hotelInfo[hotelInitials].upvotes += 1;
-    res.status(200).send(`${hotelInfo} now has ${hotelInfo[hotelInitials].upvotes} upvotes!`);
+    clubInfo[clubInitials].upvotes += 1;
+    res.status(200).send(`${clubInfo} now has ${clubInfo[clubInitials].upvotes} upvotes!`);
 });*/
 
-app.post('/api/hotels/:initials/downvote', async (req, res) => {
+app.post('/api/clubs/:initials/downvote', async (req, res) => {
     withDB(async (db) => {
-        const hotelInitials = req.params.initials;
+        const clubInitials = req.params.initials;
 
-        const hotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        await db.collection('hotels').updateOne({initials: hotelInitials}, {
+        const clubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        await db.collection('clubs').updateOne({initials: clubInitials}, {
             '$set': {
-                upvotes: hotelInfo.upvotes - 1,
+                upvotes: clubInfo.upvotes - 1,
             },
         });
 
-        const updatedHotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        res.status(200).json(updatedHotelInfo);
+        const updatedclubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        res.status(200).json(updatedclubInfo);
     }, res);
 })
 
-app.post('/api/hotels/:initials/add-review', (req, res) => {
+app.post('/api/clubs/:initials/add-review', (req, res) => {
     const {username, text} = req.body;
-    const hotelInitials = req.params.initials;
+    const clubInitials = req.params.initials;
 
     withDB(async (db) => {
-        const hotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        await db.collection('hotels').updateOne({initials: hotelInitials}, {
+        const clubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        await db.collection('clubs').updateOne({initials: clubInitials}, {
             '$set': {
                 //reviews: {username: 1, text: 2},
-                reviews: hotelInfo.reviews.concat({username, text}),
+                reviews: clubInfo.reviews.concat({username, text}),
                 //reviews: 'test',
             },
         });
 
-        const updatedHotelInfo = await db.collection('hotels').findOne({initials: hotelInitials});
-        res.status(200).json(updatedHotelInfo);
+        const updatedclubInfo = await db.collection('clubs').findOne({initials: clubInitials});
+        res.status(200).json(updatedclubInfo);
     }, res);
 })
 
-/*app.post('/api/hotels/:initials/add-review', (req, res) => {
+/*app.post('/api/clubs/:initials/add-review', (req, res) => {
     const {username, text} = req.body;
-    const hotelInitials = req.params.initials;
+    const clubInitials = req.params.initials;
 
-    hotelInfo[hotelInitials].reviews.push({username, text});
-    res.status(200).send(hotelInfo[hotelInitials]);
+    clubInfo[clubInitials].reviews.push({username, text});
+    res.status(200).send(clubInfo[clubInitials]);
 });*/
 
 app.get('/api/management', async (req, res) => {
     withDB(async (db) => {
-        //const bookings = await db.collection('bookings').findOne({});
-        //res.status(200).json(bookings);
-        //await db.collection('hotels').drop();
-        await db.createCollection('hotels11');
+        //const members = await db.collection('members').findOne({});
+        //res.status(200).json(members);
+        //await db.collection('clubs').drop();
+        await db.createCollection('clubs11');
         res.status(200).send('Done');
     }, res);
 })
 
 app.post('/api/resetdb', async (req, res) => { //todo: 포스트맨에서는 잘되지만 웹에서는 에러.
     withDB(async (db) => {
-        await db.collection('hotels').drop();
-        db.createCollection('hotels');
-        db.collection('hotels').insert([{
-                initials:'bw',
+        await db.collection('clubs').drop();
+        db.createCollection('clubs');
+        db.collection('clubs').insert([{
+                initials:'baseball',
                 upvotes: 0,
                 reviews: [],
             },{
-                initials:'rpc',
+                initials:'soccer',
                 upvotes: 0,
                 reviews: [],
             },{
-                initials:'spis',
+                initials:'basketball',
+                upvotes: 0,
+                reviews: [],
+            },{
+                initials:'icehockey',
                 upvotes: 0,
                 reviews: [],
             }]
         )
 
-        await db.collection('bookings').drop();
-        db.createCollection("bookings");
-        db.collection('bookings').insert([{
+        await db.collection('members').drop();
+        db.createCollection("members");
+        db.collection('members').insert([{
             custName: "Harry Potter",
             custEmail: "harry.potter@jkmail.com",
             custPhone: "403-999-1234",
