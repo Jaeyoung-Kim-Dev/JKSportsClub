@@ -1,11 +1,14 @@
 {
-  "name": "jksportsclub-backend",
+  "name": "jksportsclub",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:8000/",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon --exec npx babel-node src/server.js",
+    "start": "npx nodemon --exec npx babel-node server/server.js",
     "db": "mongod --dbpath=/Users/jaeyoungkim/data/db",
+    "client": "cd client && npm start",
+    "server": "npx nodemon --exec npx babel-node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
