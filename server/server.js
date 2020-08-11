@@ -1,9 +1,9 @@
 /*import express from 'express';
 import bodyParser from 'body-parser';
 import {MongoClient} from 'mongodb';*/
-var express =  require('express');
-var bodyParser =  require('body-parser');
-var {MongoClient} = require('mongodb');
+const express =  require('express');
+const bodyParser =  require('body-parser');
+const {MongoClient} = require('mongodb');
 
 const app = express();
 
