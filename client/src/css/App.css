@@ -1,0 +1,39 @@
+.create-booking {
+  display: none;
+}
+
+.card {
+  margin: 1rem auto;
+  position: relative;
+}
+
+.card-body {
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top:0;
+  color: white;
+  background: rgba(0,0,0,0.4);
+}
+
+.card-title {
+  padding: 1rem;
+  position: absolute;
+  top:0;
+
+}
+
+.card-text {
+  padding: 1rem;
+  position: absolute;
+  bottom:0;
+}
+
+h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.0vh;
+}
