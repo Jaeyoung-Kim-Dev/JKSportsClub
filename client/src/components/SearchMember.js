@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchMember = ({orderBy,setOrderBy,orderDir,setOrderDir,setQueryText}) => {
+const SearchMember = ({orderBy, setOrderBy, orderDir, setOrderDir, setQueryText}) => {
 
     const changeOrder = async (order, dir) => {
         setOrderBy(order);

@@ -32,7 +32,7 @@ const ClubPage = ({match}) => {
     /*const clubPhoto = require("../photos/" + initials + ".jpg");*/
 
     return (
-        <Container>
+        <>
             <h1>{club.name} Club</h1>
             <br/>
             <Table striped hover>
@@ -82,8 +82,7 @@ const ClubPage = ({match}) => {
 
             <h4>Other Clubs</h4>
             <ClubsList clubs={otherClubs}/>
-        </Container>
-
+        </>
     );
 }
 
