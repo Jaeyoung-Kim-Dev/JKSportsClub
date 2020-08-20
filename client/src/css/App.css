@@ -4,11 +4,9 @@
 
 .card {
   margin: 1rem auto;
-  position: relative;
 }
 
 .card-body {
-  z-index: 2;
   position: absolute;
   right: 0;
   left: 0;
@@ -22,7 +20,6 @@
   padding: 1rem;
   position: absolute;
   top:0;
-
 }
 
 .card-text {
