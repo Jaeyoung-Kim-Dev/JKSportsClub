@@ -1,20 +1,15 @@
 import React from 'react';
-import {
-    Container,
-    Card
-} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 
 const HomePage = () => (
-    <Container>
-        <Card>
-            <Card.Img variant="top" src={require(`../photos/logo.jpg`)}/>
-            <Card.Body>
-                <Card.Title bg="black">
-                    <h1>Welcome to JK Sports Club!</h1>
-                </Card.Title>
-            </Card.Body>
-        </Card>
-    </Container>
+    <Card>
+        <Card.Img variant="top" src={require(`../photos/logo.jpg`)}/>
+        <Card.Body>
+            <Card.Title bg="black">
+                <h1>Welcome to JK Sports Club!</h1>
+            </Card.Title>
+        </Card.Body>
+    </Card>
 )
 export default HomePage;
 
