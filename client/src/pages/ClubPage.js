@@ -4,11 +4,11 @@ import {
     Table
 } from 'react-bootstrap';
 import clubInfo from './club-info';
-import ClubsList from '../components/ClubsList';
+import ClubsList from '../components/club/ClubsList';
 import NotFoundPage from './NotFoundPage';
-import VotesSection from '../components/VotesSection';
-import ReviewsList from '../components/ReviewsList';
-import AddReviewForm from '../components/AddReviewForm'
+import VotesSection from '../components/club/VotesSection';
+import ReviewsList from '../components/club/ReviewsList';
+import AddReviewForm from '../components/club/AddReviewForm'
 
 const ClubPage = ({match}) => {
 
