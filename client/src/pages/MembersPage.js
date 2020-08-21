@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Registration from '../components/Registration';
-import MemberList from '../components/MemberList';
-import SearchMember from '../components/SearchMember';
+import Registration from '../components/member/Registration';
+import MemberList from '../components/member/MemberList';
+import SearchMember from '../components/member/SearchMember';
 
 const MembersPage = () => {
 
@@ -37,17 +37,15 @@ const MembersPage = () => {
                 setLastIndex={setLastIndex}
             /></div>
             <div><SearchMember
-                orderBy={orderBy}
-                setOrderBy={setOrderBy}
-                orderDir={orderDir}
-                setOrderDir={setOrderDir}
                 setQueryText={setQueryText}
             /></div>
             <div><MemberList
                 members={members}
                 setMembers={setMembers}
                 orderBy={orderBy}
+                setOrderBy={setOrderBy}
                 orderDir={orderDir}
+                setOrderDir={setOrderDir}
                 queryText={queryText}
             /></div>
         </>

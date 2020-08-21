@@ -1,5 +1,5 @@
 import React from 'react';
-import ClubsList from '../components/ClubsList';
+import ClubsList from '../components/club/ClubsList';
 import clubInfo from './club-info';
 
 const ClubsListPage = () => (

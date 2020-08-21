@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Registration from '../components/Registration';
-import MemberList from '../components/MemberList';
-import SearchMember from '../components/SearchMember';
+import Registration from '../components/member/Registration';
+import MemberList from '../components/member/MemberList';
+import SearchMember from '../components/member/SearchMember';
 
 const ManagementPage = () => {
 
