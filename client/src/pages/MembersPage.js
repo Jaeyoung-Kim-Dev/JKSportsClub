@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Registration from '../components/member/Registration';
 import MemberList from '../components/member/MemberList';
 import SearchMember from '../components/member/SearchMember';
@@ -30,24 +30,24 @@ const MembersPage = () => {
     return (
         <>
             <h1 align="center">Clubs</h1>
-            <div><Registration
-                members={members}
-                setMembers={setMembers}
-                lastIndex={lastIndex}
-                setLastIndex={setLastIndex}
-            /></div>
-            <div><SearchMember
-                setQueryText={setQueryText}
-            /></div>
-            <div><MemberList
-                members={members}
-                setMembers={setMembers}
-                orderBy={orderBy}
-                setOrderBy={setOrderBy}
-                orderDir={orderDir}
-                setOrderDir={setOrderDir}
-                queryText={queryText}
-            /></div>
+            <div className="m-1">
+                <span className="p-1">
+                    <Registration members={members}
+                                  setMembers={setMembers}
+                                  lastIndex={lastIndex}
+                                  setLastIndex={setLastIndex}/>
+                </span>
+                <span className="p-1">
+                    <SearchMember setQueryText={setQueryText}/>
+                </span>
+            </div>
+            <MemberList members={members}
+                        setMembers={setMembers}
+                        orderBy={orderBy}
+                        setOrderBy={setOrderBy}
+                        orderDir={orderDir}
+                        setOrderDir={setOrderDir}
+                        queryText={queryText}/>
         </>
     );
 }
