@@ -1,25 +1,26 @@
 import React, {useState} from 'react';
 import {FaPlus} from 'react-icons/fa';
+import {Button, Form, Modal} from "react-bootstrap";
 
-const Registration = ({myBookings: members, setMyBookings: setMembers, lastIndex, setLastIndex}) => {
+const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
 
-    const initialBooking = {
-        custName: '',
-        custEmail: '',
-        custPhone: '',
-        numberAdults: '',
-        numberChild: '',
-        createDate: '',
-        firstDate: '',
-        lastDate: ''
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const initialInfo = {
+        name: '',
+        registerClub: '',
+        DOB: '',
+        city: '',
+        prov: '',
+        phone: '',
+        email: '',
+        registerDate: ''
     }
 
-    const [tempMember, setTempMember] = useState(initialBooking);
-    const [formDisplay, setFormDisplay] = useState(false); // to toggle the 'Registration' form.
-
-    const toggleForm = async () => {  // to change the state of 'formDisplay' in the 'Registration' form.
-        setFormDisplay(!formDisplay);
-    }
+    const [tempMember, setTempMember] = useState(initialInfo);
 
     const registerMember = async (member) => {
         let tempMembers = members;
@@ -42,11 +43,11 @@ const Registration = ({myBookings: members, setMyBookings: setMembers, lastIndex
 
         tempMember.createDate = now;
 
-        registerMember(tempMember);
+        await registerMember(tempMember);
 
-        setTempMember(initialBooking);
+        setTempMember(initialInfo);
 
-        toggleForm();
+        handleClose();
     }
 
     const handleChange = async (e) => {
@@ -58,66 +59,100 @@ const Registration = ({myBookings: members, setMyBookings: setMembers, lastIndex
     }
 
     return (
-        <div className="container">
-            <div
-                onClick={toggleForm}>
-                <FaPlus/>Register new Member
-            </div>
-            <form
-                className={(formDisplay ? '' : 'create-booking')}
-                onSubmit={handleAdd}>
-                <label htmlFor="custName">Name:</label>
-                <input
-                    type="text"
-                    name="custName"
-                    value={tempMember.custName}
-                    onChange={handleChange}>
-                </input><br/>
-                <label htmlFor="custEmail">Email:</label>
-                <input
-                    type="text"
-                    name="custEmail"
-                    value={tempMember.custEmail}
-                    onChange={handleChange}>
-                </input><br/>
-                <label htmlFor="custPhone#"> Phone#:</label>
-                <input
-                    type="text"
-                    name="custPhone"
-                    value={tempMember.custPhone}
-                    onChange={handleChange}>
-                </input><br/>
-                <label htmlFor="numberAdults">Adults?:</label>
-                <input
-                    type="number"
-                    name="numberAdults"
-                    value={tempMember.numberAdults}
-                    onChange={handleChange}>
-                </input><br/>
-                <label htmlFor="numberChild">Child?: </label>
-                <input
-                    type="number"
-                    name="numberChild"
-                    value={tempMember.numberChild}
-                    onChange={handleChange}>
-                </input><br/>
-                <label htmlFor="firstDate">From:</label>
-                <input
-                    type="date"
-                    name="firstDate"
-                    value={tempMember.firstDate}
-                    onChange={handleChange}>
-                </input><br/>
-                <label htmlFor="lastDate">To:</label>
-                <input
-                    type="date"
-                    name="lastDate"
-                    value={tempMember.lastDate}
-                    onChange={handleChange}>
-                </input><br/>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <>
+            <Button variant="primary" onClick={handleShow}>
+                Add
+            </Button>
+
+            <Modal
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Registration</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form>
+                        <Form.Group>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="name"
+                                value={tempMember.name}
+                                placeholder="John Doe"
+                                onChange={handleChange}
+                                />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Club</Form.Label>
+                            <Form.Control as="select">
+                                <option>Baseball</option>
+                                <option>Soccer</option>
+                                <option>Basketball</option>
+                                <option>Ice Hockey</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Date of Birth</Form.Label>
+                            <Form.Control
+                                type="date"
+                                name="DOB"
+                                value={tempMember.DOB}
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>City</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="city"
+                                value={tempMember.city}
+                                placeholder="Calgary"
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Province</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="prov"
+                                value={tempMember.prov}
+                                placeholder="AB"
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Phone</Form.Label>
+                            <Form.Control
+                                type="phone"
+                                name="phone"
+                                value={tempMember.phone}
+                                placeholder="999-999-9999"
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control
+                                type="email"
+                                name="email"
+                                value={tempMember.email}
+                                placeholder="name@example.com"
+                                onChange={handleChange}
+                            />
+                        </Form.Group>
+                    </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleAdd}>Submit</Button>
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 
 }
