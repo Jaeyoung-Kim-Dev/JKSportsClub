@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {FaPlus} from 'react-icons/fa';
 import {Button, Form, Modal} from "react-bootstrap";
 
 const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
@@ -39,9 +38,7 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
         let year = newDate.getFullYear();
         let hour = ("0" + (newDate.getHours() + 1)).slice(-2)
         let minute = ("0" + (newDate.getMinutes() + 1)).slice(-2)
-        let now = year + "-" + month + "-" + date + " " + hour + ":" + minute;
-
-        tempMember.createDate = now;
+        tempMember.registerDate = year + "-" + month + "-" + date + " " + hour + ":" + minute;
 
         await registerMember(tempMember);
 
@@ -94,16 +91,16 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
                                 />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Club</Form.Label>
                             <Form.Control as="select"
                                           name="registerClub"
                                           value={tempMember.registerClub}
                                           onChange={handleChange}
                             >
-                                <option value="Baseball">Baseball</option>
-                                <option value="Soccer">Soccer</option>
-                                <option value="Basketball">Basketball</option>
-                                <option value="Ice Hockey">Ice Hockey</option>
+                                <option>N/A</option>
+                                <option>BASEBALL</option>
+                                <option>SOCCER</option>
+                                <option>BASKETBALL</option>
+                                <option>ICE HOCKEY</option>
                             </Form.Control>
                         </Form.Group>
                         <Form.Group>
@@ -166,7 +163,6 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
             </Modal>
         </>
     );
-
 }
 
 export default Registration;
