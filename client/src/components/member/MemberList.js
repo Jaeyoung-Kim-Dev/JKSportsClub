@@ -2,7 +2,7 @@ import React from 'react';
 import {FaTimes} from 'react-icons/fa';
 import Moment from 'react-moment';
 import {findIndex, without} from "lodash"; // 'without': makes to delete elements of array easily. 'findIndex': can find index to update the info.
-import {Table} from 'react-bootstrap';
+import {Form, Table} from 'react-bootstrap';
 
 const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrderDir, queryText}) => {
 
@@ -159,7 +159,11 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
                             onBlur={
                                 e => updateInfo('registerClub', e.target.innerText, member.membersId)
                             }>
-                            {member.registerClub}
+                            <select value={member.registerClub}><option value="Baseball">Baseball</option>
+                                <option value="Soccer">Soccer</option>
+                                <option value="Basketball">Basketball</option>
+                                <option value="Ice Hockey">Ice Hockey</option></select>
+                            {/*{member.registerClub}*/}
                         </td>
                         <td
                             contentEditable
@@ -167,7 +171,8 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
                             onBlur={
                                 e => updateInfo('DOB', e.target.innerText, member.membersId)
                             }>
-                            {member.DOB}
+                            <input type="date" value={member.DOB} />
+                                {/*{member.DOB}*/}
                         </td>
                         <td
                             contentEditable
