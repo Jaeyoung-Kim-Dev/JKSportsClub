@@ -58,6 +58,14 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
         }));
     }
 
+    const ComboHandleChange = async (e) => {
+        const {name, value} = e.target;
+        setTempMember(prevState => ({
+            ...prevState,   // keep the previous values
+            [name]: value,
+        }));
+    }
+
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
@@ -87,11 +95,15 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Club</Form.Label>
-                            <Form.Control as="select">
-                                <option>Baseball</option>
-                                <option>Soccer</option>
-                                <option>Basketball</option>
-                                <option>Ice Hockey</option>
+                            <Form.Control as="select"
+                                          name="registerClub"
+                                          value={tempMember.registerClub}
+                                          onChange={handleChange}
+                            >
+                                <option value="Baseball">Baseball</option>
+                                <option value="Soccer">Soccer</option>
+                                <option value="Basketball">Basketball</option>
+                                <option value="Ice Hockey">Ice Hockey</option>
                             </Form.Control>
                         </Form.Group>
                         <Form.Group>

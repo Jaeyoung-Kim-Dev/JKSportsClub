@@ -29,7 +29,7 @@ const MembersPage = () => {
 
     return (
         <>
-            <h1 align="center">Clubs</h1>
+            <h1 align="center">Members</h1>
             <div className="m-1">
                 <span className="p-1">
                     <Registration members={members}

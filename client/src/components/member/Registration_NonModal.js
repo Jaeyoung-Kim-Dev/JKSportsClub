@@ -1,3 +1,4 @@
+/*
 import React, {useState} from 'react';
 import {FaPlus} from 'react-icons/fa';
 
@@ -122,4 +123,4 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
 
 }
 
-export default Registration;
+export default Registration;*/
