@@ -117,7 +117,7 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
 
 
     return (
-        <div style={{overflow: "scroll"}}>
+        <div style={{overflow: "auto"}}>
             {/*<ReactCollapsingTable columns={columns}
                                   rows={_members}
                                   rowSize={50}
@@ -159,11 +159,11 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
                             onBlur={
                                 e => updateInfo('registerClub', e.target.innerText, member.membersId)
                             }>
-                            <select value={member.registerClub}><option value="Baseball">Baseball</option>
+                            {/*<select value={member.registerClub}><option value="Baseball">Baseball</option>
                                 <option value="Soccer">Soccer</option>
                                 <option value="Basketball">Basketball</option>
-                                <option value="Ice Hockey">Ice Hockey</option></select>
-                            {/*{member.registerClub}*/}
+                                <option value="Ice Hockey">Ice Hockey</option></select>*/}
+                            {member.registerClub}
                         </td>
                         <td
                             contentEditable
@@ -171,8 +171,8 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
                             onBlur={
                                 e => updateInfo('DOB', e.target.innerText, member.membersId)
                             }>
-                            <input type="date" value={member.DOB} />
-                                {/*{member.DOB}*/}
+                            {/*<input type="date" value={member.DOB} />*/}
+                                {member.DOB}
                         </td>
                         <td
                             contentEditable

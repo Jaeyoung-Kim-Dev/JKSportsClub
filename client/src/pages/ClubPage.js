@@ -19,6 +19,7 @@ const ClubPage = ({match}) => {
 
     useEffect(() => {
         const fetchData = async () => {
+            window.scrollTo(0, 0);  // scroll to top
             const result = await fetch(`/api/clubs/${initials}`);
             const body = await result.json();
             setClubFeedback(body);
