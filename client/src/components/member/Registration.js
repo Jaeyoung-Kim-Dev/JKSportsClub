@@ -10,7 +10,7 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
 
     const initialInfo = {
         name: '',
-        registerClub: '',
+        registerClub: 'N/A',
         DOB: '',
         city: '',
         prov: '',
@@ -36,9 +36,9 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
         let date = ("0" + (newDate.getDate() + 1)).slice(-2)
         let month = ("0" + (newDate.getMonth() + 1)).slice(-2)
         let year = newDate.getFullYear();
-        let hour = ("0" + (newDate.getHours() + 1)).slice(-2)
-        let minute = ("0" + (newDate.getMinutes() + 1)).slice(-2)
-        tempMember.registerDate = year + "-" + month + "-" + date + " " + hour + ":" + minute;
+        /*let hour = ("0" + (newDate.getHours() + 1)).slice(-2)
+        let minute = ("0" + (newDate.getMinutes() + 1)).slice(-2)*/
+        tempMember.registerDate = year + "-" + month + "-" + date/* + " " + hour + ":" + minute*/;
 
         await registerMember(tempMember);
 
@@ -48,14 +48,6 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
     }
 
     const handleChange = async (e) => {
-        const {name, value} = e.target;
-        setTempMember(prevState => ({
-            ...prevState,   // keep the previous values
-            [name]: value,
-        }));
-    }
-
-    const ComboHandleChange = async (e) => {
         const {name, value} = e.target;
         setTempMember(prevState => ({
             ...prevState,   // keep the previous values
