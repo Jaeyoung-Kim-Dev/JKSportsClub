@@ -23,7 +23,7 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
 
     const registerMember = async (member) => {
         let tempMembers = members;
-        member.bksId = lastIndex;
+        member.membersId = lastIndex;
         tempMembers.unshift(member);
         setMembers(tempMembers);
         setLastIndex(lastIndex + 1);
@@ -36,9 +36,7 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
         let date = ("0" + (newDate.getDate() + 1)).slice(-2)
         let month = ("0" + (newDate.getMonth() + 1)).slice(-2)
         let year = newDate.getFullYear();
-        /*let hour = ("0" + (newDate.getHours() + 1)).slice(-2)
-        let minute = ("0" + (newDate.getMinutes() + 1)).slice(-2)*/
-        tempMember.registerDate = year + "-" + month + "-" + date/* + " " + hour + ":" + minute*/;
+        tempMember.registerDate = year + "-" + month + "-" + date;
 
         await registerMember(tempMember);
 
@@ -83,6 +81,7 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
                                 />
                         </Form.Group>
                         <Form.Group>
+                            <Form.Label>Club</Form.Label>
                             <Form.Control as="select"
                                           name="registerClub"
                                           value={tempMember.registerClub}
