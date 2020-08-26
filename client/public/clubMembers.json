@@ -57,7 +57,7 @@
     "prov": "QC",
     "phone": "741-991-5247",
     "email": "legolas@jkmail.com",
-    "registerDate": "2020-03-10 04:30"
+    "registerDate": "2020-03-19 04:30"
   },
   {
     "name": "Saruman",
@@ -87,6 +87,36 @@
     "prov": "MB",
     "phone": "247-651-6666",
     "email": "peter.parker@jkmail.com",
-    "registerDate": "2020-05-10 10:30"
+    "registerDate": "2020-06-24 15:30"
+  },
+  {
+    "name": "Hulk",
+    "registerClub": "BASKETBALL",
+    "DOB": "2000-07-15",
+    "city": "Winnipeg",
+    "prov": "MB",
+    "phone": "147-427-1234",
+    "email": "hulk@jkmail.com",
+    "registerDate": "2020-08-19 11:30"
+  },
+  {
+    "name": "Black Widow",
+    "registerClub": "ICE HOCKEY",
+    "DOB": "1999-03-02",
+    "city": "Calgary",
+    "prov": "AB",
+    "phone": "677-114-3214",
+    "email": "black.widow@jkmail.com",
+    "registerDate": "2020-02-09 09:35"
+  },
+  {
+    "name": "Steve Rogers",
+    "registerClub": "SOCCER",
+    "DOB": "1977-06-11",
+    "city": "Edmonton",
+    "prov": "AB",
+    "phone": "773-147-1449",
+    "email": "steve.rogers@jkmail.com",
+    "registerDate": "2020-03-31 11:35"
   }
 ]

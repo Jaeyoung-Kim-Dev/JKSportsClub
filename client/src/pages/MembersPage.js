@@ -14,7 +14,7 @@ const MembersPage = () => {
 
     useEffect(() => {
         let index = lastIndex
-        fetch('./data.json')
+        fetch('./clubMembers.json')
             .then(response => response.json())
             .then(result => {
                 const members = result.map(member => {

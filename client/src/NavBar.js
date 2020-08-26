@@ -3,7 +3,7 @@ import {Form, Nav, Navbar} from 'react-bootstrap'
 import ResetDB from './components/ResetDB';
 
 const NavBar = () => (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" fixed="top" >
         <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Nav className="mr-auto">

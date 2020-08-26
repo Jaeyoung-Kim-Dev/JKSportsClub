@@ -1,10 +1,7 @@
-import React, {useState, useEffect} from 'react';
-import {
-    Container,
-    Table
-} from 'react-bootstrap';
+import React, {useEffect, useState} from 'react';
+import {Table} from 'react-bootstrap';
 import clubInfo from './club-info';
-import ClubsList from '../components/club/ClubsList';
+import ClubsListOther from '../components/club/ClubsListOther';
 import NotFoundPage from './NotFoundPage';
 import VotesSection from '../components/club/VotesSection';
 import ReviewsList from '../components/club/ReviewsList';
@@ -82,7 +79,7 @@ const ClubPage = ({match}) => {
             <br/>
 
             <h4>Other Clubs</h4>
-            <ClubsList clubs={otherClubs}/>
+            <ClubsListOther clubs={otherClubs}/>
         </>
     );
 }
