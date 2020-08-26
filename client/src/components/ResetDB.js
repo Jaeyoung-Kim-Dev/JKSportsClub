@@ -30,7 +30,7 @@ const ResetDB = () => {
                     <Modal.Title>Restore DB</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>This option is to restore the data the below.</p>
+                    <p>This option is to restore the club data the below.</p>
                     <ListGroup>
                         <ListGroup.Item>Up&Down Votes</ListGroup.Item>
                         <ListGroup.Item>Reviews</ListGroup.Item>

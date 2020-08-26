@@ -72,7 +72,7 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
 
     return (
         <div style={{overflow: "auto"}}>
-            <Table>
+            <Table style={{whiteSpace: "nowrap"}}>
                 <thead className="thead-light">
                 <tr>
                     <th scope="col">Delete</th>
