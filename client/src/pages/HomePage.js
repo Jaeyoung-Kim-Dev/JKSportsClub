@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from 'react-bootstrap';
+import {Card, Alert} from 'react-bootstrap';
 
 const HomePage = () => (
     <>
@@ -12,9 +12,10 @@ const HomePage = () => (
             </Card.Body>
         </Card>
 
-        <p>This is not a real website and it's about a sports club management.</p>
+        <p>This is about a sports club management and it's not a real website.</p>
         <p>This website can do CRUD (Create, Read, Update, Delete). </p>
 
+        <Alert variant="primary">Clubs Page</Alert>
         <p>Clubs Page: There are a list of clubs people can join. It includes a basic information. People can do up/down
             votes and write a reviews. All data is stored in a database permanently and you can restore as default with
             clicking the Reset DB button at the top right.</p>
