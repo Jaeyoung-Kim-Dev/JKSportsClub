@@ -22,7 +22,7 @@ const HomePage = () => (
         <p>Members Page: It shows the members of the club. All members data is read from JSON. You can add, search,
             sort, update and delete members.</p>
 
-        <p>Front end: React JS | Bootstrap |</p>
+        <p>Front end: React JS | Bootstrap</p>
         <p>Backend: Node JS | Express</p>
         <p>Database: MongoDB</p>
         <p>Deployment: AWS</p>
