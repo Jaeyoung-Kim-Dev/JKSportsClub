@@ -25,7 +25,7 @@ const HomePage = () => (
         <p>Front end: React JS | Bootstrap</p>
         <p>Backend: Node JS | Express</p>
         <p>Database: MongoDB</p>
-        <p>Deployment: AWS :</p>
+        <p>Deployment: AWS</p>
 
         <p>Developed by Jaeyoung Kim</p>
     </>
