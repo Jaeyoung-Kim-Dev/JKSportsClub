@@ -26,7 +26,7 @@ const HomePage = () => (
         <p>Backend: Node JS | Express</p>
         <p>Database: MongoDB</p>
 
-        <p>Developed by Jaeyoung Kim</p> 
+        <p>Developed by Jaeyoung Kim</p>
     </>
 )
 export default HomePage;
