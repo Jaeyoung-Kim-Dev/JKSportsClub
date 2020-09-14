@@ -24,8 +24,6 @@ const HomePage = () => (
         <br/>
         <p>Database:</p>
         <Alert variant="success">MongoDB</Alert>
-
-
     </>
 )
 export default HomePage;
