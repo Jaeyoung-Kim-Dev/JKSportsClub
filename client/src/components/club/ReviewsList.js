@@ -1,5 +1,6 @@
 import React from 'react';
 import {Col, Row, Toast} from 'react-bootstrap';
+import Moment from "react-moment";
 
 const ReviewsList = ({reviews}) => (
     <>
@@ -10,7 +11,10 @@ const ReviewsList = ({reviews}) => (
                     <Toast>
                         <Toast.Header closeButton={false}>
                             <strong className="mr-auto">{review.username}</strong>
-                            <small>10/10/2020</small>
+                            <small>
+                                <Moment date={review.registerDate}
+                                        format="YYYY-MM-DD"/>
+                            </small>
                         </Toast.Header>
                         <Toast.Body>{review.text}</Toast.Body>
                     </Toast>

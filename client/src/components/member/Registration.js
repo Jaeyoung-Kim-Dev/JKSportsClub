@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, Modal} from "react-bootstrap";
+import moment from "moment";
 
 const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
 
@@ -32,11 +33,7 @@ const Registration = ({members, setMembers, lastIndex, setLastIndex}) => {
     const handleAdd = async (e) => {
         e.preventDefault();
 
-        let newDate = new Date();
-        let date = ("0" + (newDate.getDate() + 1)).slice(-2)
-        let month = ("0" + (newDate.getMonth() + 1)).slice(-2)
-        let year = newDate.getFullYear();
-        tempMember.registerDate = year + "-" + month + "-" + date;
+        tempMember.registerDate = moment();
 
         await registerMember(tempMember);
 

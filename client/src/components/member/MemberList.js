@@ -152,7 +152,6 @@ const MemberList = ({members, setMembers, orderBy, setOrderBy, orderDir, setOrde
                         <td>
                             <Moment
                                 date={member.registerDate}
-                                parse="YYYY-MM-DD hh:mm"
                                 format="YYYY-MM-DD"
                             />
                         </td>

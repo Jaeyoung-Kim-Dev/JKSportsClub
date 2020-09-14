@@ -61,22 +61,19 @@ const ClubPage = ({match}) => {
                 </tr>
                 </tbody>
             </Table>
-            <br/>
-            <div className="row">
-                {/*<img src={clubPhoto} className="col-8" alt="Club"/>
-                <br/>*/}
-                <br/>
-                <div className="col-">
-                    <VotesSection clubInitials={initials} upvotes={clubFeedback.upvotes}
-                                  setClubFeedback={setClubFeedback}/>
-                </div>
-                <br/>
-            </div>
-            <br/>
+
+            <hr/>
+
+            <VotesSection clubInitials={initials} upvotes={clubFeedback.upvotes}
+                          setClubFeedback={setClubFeedback}/>
+
+            <hr/>
             <ReviewsList clubInitials={initials} reviews={clubFeedback.reviews}/>
+            <hr/>
             <AddReviewForm clubInitials={initials}
                            setClubFeedback={setClubFeedback}/>
-            <br/>
+
+            <hr/>
 
             <h4>Other Clubs</h4>
             <ClubsListOther clubs={otherClubs}/>
