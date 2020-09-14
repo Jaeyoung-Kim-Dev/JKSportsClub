@@ -25,11 +25,11 @@ const VotesSection = ({clubInitials, upvotes, setClubFeedback}) => {
         setClubFeedback(body);
     }
     return (
-        <Container>
+        <>
             <Button variant="success m-1" onClick={() => upvoteClub()}><FiThumbsUp/></Button>
             <Button variant="danger m-1" onClick={() => downvoteClub()}><FiThumbsDown/></Button>
             <p className="d-inline-block p-2">This club has been upvoted <span className="font-weight-bold">{upvotes}</span> times.</p>
-        </Container>
+        </>
     );
 }
 

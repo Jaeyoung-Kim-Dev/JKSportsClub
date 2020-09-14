@@ -3,9 +3,11 @@ import {
     Form,
     Button
 } from 'react-bootstrap';
+import moment from "moment";
 
 const AddReviewForm = ({clubInitials: clubInitials, setClubFeedback: setClubFeedback}) => {
     const [username, setUsername] = useState('');
+    const [registerDate, setRegisterDate] = useState('');
     const [reviewText, setReviewText] = useState('');
     const [valid, setValid] = useState(true);
 
@@ -20,10 +22,10 @@ const AddReviewForm = ({clubInitials: clubInitials, setClubFeedback: setClubFeed
             setValid(true);
         }
 
-        if (valid) { //todo: 한번 경고창이 뜨고 나면 add버튼을 두번 눌러야 리뷰가 더해짐
+        if (valid) {
             const result = await fetch(`/api/clubs/${clubInitials}/add-review`, {
                 method: 'post',
-                body: JSON.stringify({username: username, text: reviewText}),
+                body: JSON.stringify({username: username, registerDate: moment(), text: reviewText}),
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -34,7 +36,6 @@ const AddReviewForm = ({clubInitials: clubInitials, setClubFeedback: setClubFeed
             setReviewText('');
             e.preventDefault();
         }
-
     }
 
     return (

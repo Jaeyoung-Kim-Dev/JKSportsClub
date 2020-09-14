@@ -65,7 +65,7 @@ app.post('/api/clubs/:initials/downvote', async (req, res) => {
 })
 
 app.post('/api/clubs/:initials/add-review', (req, res) => {
-    const {username, text} = req.body;
+    const {username, registerDate, text} = req.body;
     const clubInitials = req.params.initials;
 
     withDB(async (db) => {
@@ -73,7 +73,7 @@ app.post('/api/clubs/:initials/add-review', (req, res) => {
         await db.collection('clubs').updateOne({initials: clubInitials}, {
             '$set': {
                 //reviews: {username: 1, text: 2},
-                reviews: clubInfo.reviews.concat({username, text}),
+                reviews: clubInfo.reviews.concat({username, registerDate, text}),
                 //reviews: 'test',
             },
         });
@@ -93,7 +93,7 @@ app.get('/api/management', async (req, res) => {
     }, res);
 })
 
-app.post('/api/resetdb', (req, res) => { //todo: 포스트맨에서는 잘되지만 웹에서는 에러.
+app.post('/api/resetdb', (req, res) => {
     withDB((db) => {
         db.collection('clubs').drop();
         db.createCollection('clubs');
