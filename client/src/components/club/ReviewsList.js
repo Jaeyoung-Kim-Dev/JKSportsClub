@@ -7,7 +7,7 @@ const ReviewsList = ({reviews}) => (
         <h4>Reviews</h4>
         <Row>
             {reviews.map((review, key) => (
-                <Col xs={12} sm={6} md={4} className="p-2" key={key}>
+                <Col xs={12} sm={6} md={4} className="p-2 justify-content-center" key={key}>
                     <Toast>
                         <Toast.Header closeButton={false}>
                             <strong className="mr-auto">{review.username}</strong>
