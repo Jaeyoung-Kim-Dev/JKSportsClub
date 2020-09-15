@@ -1,1 +1,3 @@
-# jksportsclub
+# JKSportsClub
+
+JK Sports Club
