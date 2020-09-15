@@ -3,11 +3,13 @@ import bodyParser from 'body-parser';
 import {MongoClient} from 'mongodb';*/
 const express =  require('express');
 const bodyParser =  require('body-parser');
+const path = require('path');
 const {MongoClient} = require('mongodb');
 const defaultClubs = require('./defaultClubs')
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, '/build')));
 app.use(bodyParser.json());
 
 const withDB = async (operations, res) => {
@@ -101,6 +103,12 @@ app.post('/api/resetdb', (req, res) => {
 
         res.sendStatus(200)
     }, res);
+})
+
+// all of requests that aren't caught by any of other API routes should be passes on to the app.
+// It allows the client site app to navigate between pages and process urls correctly.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
 })
 
 app.listen(8000, () => console.log('Listening on  port 8000'));
