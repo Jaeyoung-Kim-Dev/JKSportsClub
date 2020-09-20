@@ -1,6 +1,7 @@
 # JKSportsClub
 
 This is about a sports club management and it's not a real website.
+
 The website can do CRUD (Create, Read, Update and Delete).
 
 
@@ -22,5 +23,8 @@ It shows the members of the club.
 All members data is read from JSON.
 You can add, search, sort, update and delete members.
 
-<a href="http://64.137.182.168/"># Link</a>
+#Link
+<a href="http://64.137.182.168/">Click me!</a>
+
+
 I hope you enjoy it!
