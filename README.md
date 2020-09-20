@@ -8,13 +8,13 @@ The website can do CRUD (Create, Read, Update and Delete).
 # Language
 
 ### Front end
-React JS | Bootstrap
+`React JS | Bootstrap`
 
 ### Backend
-Node JS | Express
+`Node JS | Express`
 
 ### Database
-MongoDB
+`MongoDB`
 
 # Pages
 
