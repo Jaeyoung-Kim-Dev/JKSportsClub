@@ -19,8 +19,8 @@ The website can do CRUD (Create, Read, Update and Delete).
 # Pages
 
 Clubs page:
-There are a list of clubs people can join.
-It includes a basic information. People can do up/down votes and write a reviews.
+There is a list of clubs people can join.
+It includes basic information. People can do up/down votes and write reviews.
 All data is stored in a database permanently and you can restore as default with clicking the Reset DB button at the top right.
 
 Members Page:
