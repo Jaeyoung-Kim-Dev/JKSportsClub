@@ -29,7 +29,7 @@ All members data is read from JSON.
 You can add, search, sort, update and delete members.
 
 # Link
-<a href="http://64.137.182.168/">Click me!</a>
+<a href="http://jksportsclub.jaeyoungkim.codes/">Click me!</a>
 
 
 I hope you enjoy it!
