@@ -46,8 +46,8 @@ const MembersPage = () => {
                         </Modal.Header>
                         <Modal.Body>
                             <p>It shows the members of the club.</p>
-                            <p>All members data is read from JSON.</p>
-                            <p>You can add, search, sort, update and delete members.</p>
+                            <p>All members' data is read from JSON.</p>
+                            <p>You can add, search, sort, update, and delete members.</p>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={handleClose}>
