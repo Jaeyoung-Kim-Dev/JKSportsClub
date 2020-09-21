@@ -23,9 +23,9 @@ const ClubsListPage = () => {
                     <Modal.Title>Clubs Page</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>There are a list of clubs people can join.</p>
-                    <p> It includes a basic information. People can do up/down
-                        votes and write a reviews.</p>
+                    <p>There is a list of clubs people can join.</p>
+                    <p> It includes basic information. People can do up/down
+                        votes and write reviews.</p>
                     <p> All data is stored in a database permanently and you can restore
                         as default with clicking the Reset DB button at the top right.</p>
                 </Modal.Body>
