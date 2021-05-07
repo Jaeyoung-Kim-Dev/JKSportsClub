@@ -1,31 +1,22 @@
 import React from 'react';
-import {Card, Alert} from 'react-bootstrap';
+import { Card, Alert } from 'react-bootstrap';
 
 const HomePage = () => (
-    <>
-        <Card>
-            <Card.Img variant="top" src={require(`../photos/logo.jpg`)}/>
-            <Card.Body>
-                <Card.Title bg="black">
-                    <h1>Welcome to JK Sports Club!</h1>
-                </Card.Title>
-            </Card.Body>
-        </Card>
-
-        <p>This is about a sports club management and it's not a real website.</p>
-        <p>This website can do CRUD (Create, Read, Update and Delete). </p>
-        <p>Developed by <a href="https://jaeyoungkim.codes/">Jaeyoung Kim</a></p>
-        <br/>
-        <p>Front end:</p>
-        <Alert variant="success">React JS | Bootstrap</Alert>
-        <br/>
-        <p>Backend:</p>
-        <Alert variant="success">Node JS | Express</Alert>
-        <br/>
-        <p>Database:</p>
-        <Alert variant="success">MongoDB</Alert>
-    </>
-)
+  <>
+    <Card>
+      <Card.Img variant='top' src={require(`../photos/logo.jpg`)} />
+      <Card.Body>
+        <Card.Title bg='black'>
+          <h1>Welcome to JK Sports Club!</h1>
+        </Card.Title>
+      </Card.Body>
+    </Card>
+    <Alert variant='success'>
+      This is a web application that provides information about sports clubs,
+      manages reviews, and adds, modifies and deletes membership information.
+    </Alert>
+  </>
+);
 export default HomePage;
 
 //logo.jpg from https://pixabay.com/photos/sports-sport-baseball-basketball-5324462/
