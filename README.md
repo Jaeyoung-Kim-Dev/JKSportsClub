@@ -1,35 +1,38 @@
-# JKSportsClub
+<h1 align="center">Welcome to JK Sports Club 👋</h1>
 
-This is about a sports club management and it's not a real website.
+## What project is it?
 
-The website can do CRUD (Create, Read, Update and Delete).
+This is a web application that provides information about sports clubs, manages reviews, and adds, modifies and deletes membership information.
 
+## Pages and Functionality
 
-# Language
+- Clubs page:
 
-### Front end
-`React JS | Bootstrap`
+  1. There is a list of clubs people can join.
+  2. It includes basic information such as a description, location, hours, coach, email and fees. People can do up/down votes and write reviews.
+  3. All data is stored in a database permanently and it can be restored as default with clicking the Reset DB button at the top right.
 
-### Backend
-`Node JS | Express`
+- Members Page:
+  1. It shows the members of the club.
+  2. All members data is read from JSON.
+  3. Membership information can added, searched, sorted, updated and deleted.
 
-### Database
-`MongoDB`
+## Languages
 
-# Pages
+<p align="left"> <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a><a href="https://getbootstrap.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> </p>
 
-Clubs page:
-There is a list of clubs people can join.
-It includes basic information. People can do up/down votes and write reviews.
-All data is stored in a database permanently and you can restore as default with clicking the Reset DB button at the top right.
+## Screen Shots
 
-Members Page:
-It shows the members of the club.
-All members data is read from JSON.
-You can add, search, sort, update and delete members.
+![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot1.jpg?raw=true)
+![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot2.jpg?raw=true)
+![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot3.jpg?raw=true)
+![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot4.jpg?raw=true)
+![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot5.jpg?raw=true)
 
-# Link
-<a href="http://jksportsclub.jaeyoungkim.codes/">Click me!</a>
+## Author
 
+👤 **Jaeyoung Kim**
 
-I hope you enjoy it!
+- Website: https://www.jaeyoungkim.ca/
+- Github: [@jaeyoung-kim-dev](https://github.com/jaeyoung-kim-dev)
+- LinkedIn: [@jaeyoung-kim-dev](https://www.linkedin.com/in/jaeyoung-kim-dev/)
