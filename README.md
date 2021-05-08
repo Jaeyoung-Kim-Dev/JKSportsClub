@@ -23,15 +23,15 @@ This is a web application that provides information about sports clubs, manages 
 
 ## Screen Shots
 
-![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot1.jpg?raw=true)
+![screenshot1](./screenshots/screenshot1.jpg?raw=true)
 
-![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot2.jpg?raw=true)
+![screenshot2](./screenshots/screenshot2.jpg?raw=true)
 
-![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot3.jpg?raw=true)
+![screenshot3](./screenshots/screenshot3.jpg?raw=true)
 
-![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot4.jpg?raw=true)
+![screenshot4](./screenshots/screenshot4.jpg?raw=true)
 
-![erd](https://github.com/Jaeyoung-Kim-Dev/JKSportsClub/blob/master/screenshots/screenshot5.jpg?raw=true)
+![screenshot5](./screenshots/screenshot5.jpg?raw=true)
 
 ## Author
 
